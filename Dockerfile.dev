@@ -1,0 +1,14 @@
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "run", "start"]
+
+# docker run -p 3000:3000 -v /app/node-modules -v E:/Development/DockerTest/TestReactApp/client:/app
+# docker run -p 3000:3000 -v /app/node-modules -v $(pwd):/app
